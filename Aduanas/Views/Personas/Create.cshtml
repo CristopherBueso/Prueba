@@ -1,0 +1,65 @@
+﻿@model Aduanas.Models.Persona
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Registrar</h1>
+
+<h4>Persona</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Identidad" class="control-label"></label>
+                <input asp-for="Identidad" class="form-control" />
+                <span asp-validation-for="Identidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"></label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellidos" class="control-label"></label>
+                <input asp-for="Apellidos" class="form-control" />
+                <span asp-validation-for="Apellidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sexo</label>
+                <select style="height:auto;" asp-for="IdSexo" class="form-control" asp-items="ViewBag.IdSexo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label"></label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Pais de Origen</label>
+                <select style="height:auto;" asp-for="IdPaisOrigen" class ="form-control" asp-items="ViewBag.IdPaisOrigen"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Pais de Naturalizacion</label>
+                <select style="height:auto;" asp-for="IdPaisNaturalizacion" class="form-control" asp-items="ViewBag.IdPaisNaturalizacion"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
